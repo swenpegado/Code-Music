@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Keyboard Example</title>
+	<link rel="stylesheet" href="drums.css">
+	<script src="drums.js"></script>
+	
+</head>
+<!------------------------------------------------------------------------------------------------------------------------->
+<style>
+	 body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+
+      #song-upload {
+        margin-bottom: 10px;
+      }
+
+      .controls-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .player-controls button {
+        margin-right: 10px;
+        padding: 8px 16px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .player-controls button:hover {
+        background-color: #45a049;
+      }
+</style>
+<!----------------------------------------------------------------------------------------------------------------------------->
+<body>
+  <button id="fullscreen-button"> Full Screen</button>
+  <div class="word">BEATS</div>
+
+  <div class="keyboard">
+	<div class="row">
+		<div class="key">`</div>
+		<div class="key">1</div>
+		<div class="key">2</div>
+		<div class="key">3</div>
+		<div class="key">4</div>
+		<div class="key">5</div>
+		<div class="key">6</div>
+		<div class="key">7</div>
+		<div class="key">8</div>
+		<div class="key">9</div>
+		<div class="key">0</div>
+		<div class="key">-</div>
+		<div class="key">=</div>
+		<div class="key backspace">Backspace</div>
+	</div>
+	<div class="row">
+		<div class="key tab"  id="keytab">Tab</div>
+		<div class="key"  id="key-81">Q</div>
+		<div class="key"  id="key-87">W</div>
+		<div class="key"  id="key-69">E</div>
+		<div class="key"  id="key-82">R</div>
+		<div class="key"  id="key-84">T</div>
+		<div class="key"  id="key-89">Y</div>
+		<div class="key"  id="key-85">U</div>
+		<div class="key"  id="key-73">I</div>
+		<div class="key"  id="key-79">O</div>
+		<div class="key"  id="key-80">P</div>
+		<div class="key"  id="key-">[</div>
+		<div class="key"  id="key-">]</div>
+		<div class="key"  id="key-">\</div>
+</div>
+<div class="row">
+	<div class="key capslock">capslock</div>
+	<div class="key" id="key-65">A</div>
+	<div class="key"  id="key-83">S</div>
+	<div class="key"  id="key-68">D</div>
+	<div class="key"  id="key-70">F</div>
+	<div class="key"  id="key-71">G</div>
+	<div class="key"  id="key-72">H</div>
+	<div class="key"  id="key-74">J</div>
+	<div class="key"  id="key-75">K</div>
+	<div class="key"  id="key-76">L</div>
+	<div class="key"  id="key-">;</div>
+	<div class="key"  id="key-">'</div>
+	<div class="key enter"  id="key En">Enter</div>
+	</div>
+
+	<div class="row">
+		<div class="key shift"  id="keySHIFT'">SHIFT</div>
+		<div class="key" id="key-">Z</div>
+		<div class="key"  id="key-">X</div>
+		<div class="key"  id="key-">C</div>
+		<div class="key"  id="key-">V</div>
+		<div class="key"  id="key-">B</div>
+		<div class="key"  id="key-">N</div>
+		<div class="key"  id="key-">M</div>
+		<div class="key"  id="key-">,</div>
+		<div class="key"  id="key-">.</div>
+		<div class="key"  id="key-">/</div>
+		<div class="key shift"  id="keySHIFT'">SHIFT</div>
+	</div>
+  
+
+
+
+	<body style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; font-family: Arial, sans-serif;">
+		<button id="customizeButton" style="padding: 12px 24px; border: none; border-radius: 5px; background-color: #126f7f; color: white; font-size: 16px; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#45a049';" onmouseout="this.style.backgroundColor='#4CAF50';">Customize</button>
+	</body>
+	
+
+<br>
+
+<input type="color" id="colorPicker" style="display: none;">
+
+    <audio id="audio1file" src="audio/audio10.mp3" preload="auto"></audio>
+	<audio id="audio2file" src="audio/audio11.mp3" preload="auto"></audio>
+	<audio id="audio3file" src="audio/audio12.mp3" preload="auto"></audio>
+
+	<audio id="audio4file" src="audio/audio13.mp3" preload="auto"></audio>
+	<audio id="audio5file" src="audio/audio2.mp3" preload="auto"></audio>
+	<audio id="audio6file" src="audio/audio 3.mp3" preload="auto"></audio>
+	
+	<audio id="audio7file" src="audio/audio4.mp3" preload="auto"></audio>
+	<audio id="audio8file" src="audio/audio5.mp3" preload="auto"></audio>
+	<audio id="audio9file" src="audio/audio6.mp3" preload="auto"></audio>
+
+	<audio id="audio10file" src="audio/kick-vinyl01.wav" preload="auto"></audio>
+	<audio id="audio11file" src="audio/kick-newwave.wav" preload="auto"></audio>
+	<audio id="audio12file" src="audio/kick-big.wav" preload="auto"></audio>
+
+	<audio id="audio13file" src="audio/tom-analog.wav" preload="auto"></audio>
+	<audio id="audio14file" src="audio/audio11.mp3" preload="auto"></audio>
+	<audio id="audio15file" src="audio/audio12.mp3" preload="auto"></audio>
+
+	<audio id="audio16file" src="audio/audio13.mp3" preload="auto"></audio>
+	<audio id="audio17file" src="audio/audio14.mp3" preload="auto"></audio>
+	<audio id="audio18file" src="audio/audio11.mp3" preload="auto"></audio>
+
+	<audio id="audio19file" src="audio/kick-vinyl01.wav" preload="auto"></audio>
+	<audio id="audio20file" src="audio/audio9.mp3" preload="auto"></audio>
+	<audio id="audio21file" src="audio/audio8.mp3" preload="auto"></audio>
+
+
+	<audio id="audio22file" src="audio/audio7.mp3" preload="auto"></audio>
+	<audio id="audio23file" src="audio/audio5.mp3" preload="auto"></audio>
+	<audio id="audio24file" src="audio/audio6.mp3" preload="auto"></audio>
+	<audio id="audio25file" src="audio/audio5.mp3" preload="auto"></audio>
+	<audio id="audio26file" src="audio/audio2.mp3" preload="auto"></audio>
+	
+
+
+
+
+
+	<style>
+		body {
+		  display: flex;
+		  flex-direction: column;
+		  align-items: center;
+		  justify-content: center;
+		  height: 100vh;
+		  margin: 0;
+		  font-family: Arial, sans-serif;
+		}
+	
+		div {
+		  margin-bottom: 20px;
+		}
+	
+		input[type="file"] {
+		  padding: 10px;
+		  border: 2px solid #ddd;
+		  border-radius: 5px;
+		  font-size: 16px;
+		}
+	
+		button {
+		  padding: 10px 20px;
+		  border: none;
+		  border-radius: 5px;
+		  background-color: #00bbf5;
+		  color: white;
+		  font-size: 16px;
+		  cursor: pointer;
+		  transition: background-color 0.3s;
+		}
+	
+		button:hover {
+		  background-color: #115b89;
+		}
+	  </style>
+	
+	<div>
+		<input type="file" id="song-upload" accept="audio/*" />
+	  <br>
+
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		  <button id="play-button">Play</button>
+		  &nbsp;&nbsp;&nbsp;&nbsp;
+		  <button id="stop-button">Stop</button>
+		
+	  </div>
+
+<!--------------------------------------------code for rec hello mic check ------------------------>
+
+
+	<script>
+   
+// Function to toggle full screen mode
+function toggleFullScreen() {
+			if (!document.fullscreenElement) {
+				document.documentElement.requestFullscreen();
+			} else {
+				if (document.exitFullscreen) {
+					document.exitFullscreen(); 
+				}
+			}
+		}
+
+		// Add click event listener to button
+		document.getElementById("fullscreen-button").addEventListener("click", function() {
+			toggleFullScreen();
+		});
+
+		const keys = document.querySelectorAll('.key');
+
+		document.addEventListener('keydown', event => {
+			const key = document.getElementById('key-' + event.keyCode);
+
+			if (key) {
+				key.classList.add('active');
+			}
+		});
+
+		document.addEventListener('keyup', event => {
+			const key = document.getElementById('key-' + event.keyCode);
+
+			if (key) {
+				key.classList.remove('active');
+			
+            }
+	});
+
+
+
+
+        var audio1 = document.getElementById("audio1");
+		var audio2 = document.getElementById("audio2");
+		var audio3 = document.getElementById("audio3");
+		var audio4 = document.getElementById("audio4");
+		var audio5 = document.getElementById("audio5");
+		var audio6 = document.getElementById("audio6");
+		var audio7 = document.getElementById("audio7");
+		var audio8 = document.getElementById("audio8");
+		var audio9 = document.getElementById("audio9");
+		var audio10 = document.getElementById("audio10");
+		var audio11 = document.getElementById("audio11");
+		var audio12 = document.getElementById("audio12");
+		var audio13 = document.getElementById("audio13");
+		var audio14 = document.getElementById("audio14");
+		var audio15 = document.getElementById("audio15");
+		var audio16 = document.getElementById("audio16");
+		var audio17 = document.getElementById("audio17");
+		var audio18 = document.getElementById("audio18");
+		var audio19 = document.getElementById("audio19");
+		var audio20 = document.getElementById("audio20");
+		var audio21 = document.getElementById("audio21");
+		var audio22 = document.getElementById("audio22");
+		var audio23 = document.getElementById("audio23");
+		var audio24 = document.getElementById("audio24");
+		var audio25 = document.getElementById("audio25");
+		var audio26 = document.getElementById("audio26");
+
+
+
+
+		var audio1file = document.getElementById("audio1file");
+		var audio2file = document.getElementById("audio2file");
+		var audio3file = document.getElementById("audio3file");
+		var audio4file = document.getElementById("audio4file");
+		var audio5file = document.getElementById("audio5file");
+		var audio6file = document.getElementById("audio6file");
+		var audio7file = document.getElementById("audio7file");
+		var audio8file = document.getElementById("audio8file");
+		var audio9file = document.getElementById("audio9file");
+		var audio10file = document.getElementById("audio10file");
+		var audio11file = document.getElementById("audio11file");
+		var audio12file = document.getElementById("audio12file");
+		var audio13file = document.getElementById("audio13file");
+		var audio14file = document.getElementById("audio14file");
+		var audio15file = document.getElementById("audio15file");
+		var audio16file = document.getElementById("audio16file");
+		var audio17file = document.getElementById("audio17file");
+		var audio18file = document.getElementById("audio18file");
+		var audio19file = document.getElementById("audio19file");
+		var audio20file = document.getElementById("audio20file");
+		var audio21file = document.getElementById("audio21file");
+		var audio22file = document.getElementById("audio22file");
+		var audio23file = document.getElementById("audio23file");
+		var audio24file = document.getElementById("audio24file");
+		var audio25file = document.getElementById("audio25file");
+		var audio26file = document.getElementById("audio26file");
+		const audioFiles = [audio1file, audio2file, audio3file, audio4file, audio5file, audio6file, audio7file, audio8file, audio9file,audio10file,audio11file,audio12file,audio13file,audio14file,audio15file,audio16file,audio17file,audio18file,audio19file,audio20file,audio21file,audio22file,audio23file,audio24file,audio25file,audio26file];
+		document.addEventListener("keydown", function(event) {
+			
+			if (event.code === "KeyA") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio1file.currentTime = 0;
+				audio1file.play();
+  });
+}
+			
+			
+			
+			else if (event.code === "KeyS") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio2file.currentTime = 0;
+				audio2file.play();
+  });
+}
+			
+			
+else if (event.code === "KeyD") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio3file.currentTime = 0;
+				audio3file.play();
+  });
+}
+			
+  else if (event.code === "KeyF") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio4file.currentTime = 0;
+				audio4file.play();
+  });
+}
+  else if (event.code === "KeyG") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio5file.currentTime = 0;
+				audio5file.play();
+  });
+}
+  else if (event.code === "KeyH") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio6file.currentTime = 0;
+				audio6file.play();
+  });
+}
+  else if (event.code === "KeyJ") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio7file.currentTime = 0;
+				audio7file.play();
+  });
+}
+  else if (event.code === "KeyK") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio8file.currentTime = 0;
+				audio8file.play();
+  });
+}
+  else if (event.code === "KeyL") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio9file.currentTime = 0;
+				audio9file.play();
+  });
+}
+  else if (event.code === "KeyZ") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio10file.currentTime = 0;
+				audio10file.play();
+  });
+}
+  else if (event.code === "KeyX") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio11file.currentTime = 0;
+				audio11file.play();
+  });
+}
+  else if (event.code === "KeyC") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio12file.currentTime = 0;
+				audio12file.play();
+  });
+}
+  else if (event.code === "KeyV") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio13file.currentTime = 0;
+				audio13file.play();
+  });
+}
+  else if (event.code === "KeyB") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio14file.currentTime = 0;
+				audio14file.play();
+  });
+}
+else if (event.code === "KeyN") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio15file.currentTime = 0;
+				audio15file.play();
+  });
+}
+
+else if (event.code === "KeyM") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio16file.currentTime = 0;
+				audio16file.play();
+  });
+}
+else if (event.code === "KeyQ") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio17file.currentTime = 0;
+				audio17file.play();
+  });
+}
+else if (event.code === "KeyW") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio18file.currentTime = 0;
+				audio18file.play();
+  });
+}
+else if (event.code === "KeyE") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio19file.currentTime = 0;
+				audio19file.play();
+  });
+}
+else if (event.code === "KeyR") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio20file.currentTime = 0;
+				audio20file.play();
+  });
+}
+else if (event.code === "KeyT") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio21file.currentTime = 0;
+				audio21file.play();
+  });
+}
+else if (event.code === "KeyY") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio22file.currentTime = 0;
+				audio22file.play();
+  });
+}
+else if (event.code === "KeyU") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio23file.currentTime = 0;
+				audio13file.play();
+  });
+}
+else if (event.code === "KeyI") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio24file.currentTime = 0;
+				audio24file.play();
+  });
+}
+else if (event.code === "KeyO") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio25file.currentTime = 0;
+				audio25file.play();
+  });
+}
+
+else if (event.code === "KeyP") {
+  audioFiles.forEach(audioFile => {
+    audioFile.pause();
+	audio26file.currentTime = 0;
+				audio26file.play();
+  });
+}
+
+
+
+
+		});
+
+
+/////////////////////////////////////////////////////////////java code for selecting music and assigning to keys//////////////////////////////////////////////////////////////////
+const songUploadInput = document.getElementById('song-upload');
+     const audioPlayer = document.createElement('audio');
+     const playButton = document.getElementById('play-button');
+    const stopButton = document.getElementById('stop-button');
+
+      playButton.addEventListener('click', function () {
+        audioPlayer.play();
+      });
+
+      stopButton.addEventListener('click', function () {
+        audioPlayer.pause();
+        audioPlayer.currentTime = 0;
+      });
+
+      songUploadInput.addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        const fileURL = URL.createObjectURL(file);
+
+        audioPlayer.src = fileURL;
+        audioPlayer.controls = true;
+
+        document.body.appendChild(audioPlayer);
+      });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

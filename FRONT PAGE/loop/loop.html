@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOOPS</title>
+    <link rel="stylesheet" href="loop.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
+    <script defer src="loop.js"></script>
+  </head>
+  <body>
+    <button id="fullscreen-button"> Full Screen</button>
+
+    <div class="sequencer">
+      <!-- Kick sound -->
+      <div class="kick-track">
+        <!-- Controls -->
+        <div class="controls">
+          <h1>KICK</h1>
+          <!-- Mute Sound -->
+          <button data-track="0" class="mute kick-volume">
+            <i class="fa fa-volume-mute"></i>
+          </button>
+          <!-- Beat types -->
+          <select name="kick-select" id="kick-select">
+            <option value="">Classic Kick</option>
+            <option value="./sounds/kick-plain.wav">Kick Plain</option>
+            <option value="./sounds/kick-808.wav">808 Kick</option>
+            <option value="./sounds/kick-heavy.wav">Kick Heavy</option>
+            <option value="./sounds/kick-softy.wav">Kick Softy</option>
+            <option value="./sounds/kick-thump.wav">Kick Thump</option>
+            <option value="./sounds/kick-oldschool.wav">Kick Old School</option>
+            <option value="./sounds/kick-vinyl01.wav">Kick Vinyl</option>
+            <option value="./sounds/kick-deep.wav">Kick Deep</option>
+            <option value="./sounds/kick-big.wav">Kick Big</option>
+          </select>
+        </div>
+        <!-- Kick beats -->
+        <div class="kick">
+          <div class="pad kick-pad b0"></div>
+          <div class="pad kick-pad b1"></div>
+          <div class="pad kick-pad b2"></div>
+          <div class="pad kick-pad b3"></div>
+          <div class="pad kick-pad b4"></div>
+          <div class="pad kick-pad b5"></div>
+          <div class="pad kick-pad b6"></div>
+          <div class="pad kick-pad b7"></div>
+        </div>
+      </div>
+      <!-- Snare sound -->
+      <div class="snare-track">
+        <!-- Controls -->
+        <div class="controls">
+          <h1>SNARE</h1>
+          <!-- Mute Sound -->
+          <button data-track="1" class="mute snare-volume">
+            <i class="fa fa-volume-mute"></i>
+          </button>
+          <!-- Beat types -->
+          <select name="snare-select" id="snare-select">
+            <option value="./sounds/snare-electro.wav">Snare Electro</option>
+            <option value="./sounds/snare-acoustic01.wav">Classic Snare</option>
+            <option value="./sounds/snare-808.wav">808 Snare</option>
+            <option value="./sounds/snare-vinyl02.wav">Snare Vinyl</option>
+            <option value="./sounds/snare-analog.wav">Snare Analog</option>
+            <option value="./sounds/snare-tape.wav">Snare Tape</option>
+            <option value="./sounds/snare-lofi01.wav">Snare Lofi</option>
+            <option value="./sounds/snare-punch.wav">Snare Punch</option>
+            <option value="./sounds/shaker-shuffle.wav">Shaker Shuffle</option>
+          </select>
+        </div>
+        <!-- Snare beats -->
+        <div class="snare">
+          <div class="pad snare-pad b0"></div>
+          <div class="pad snare-pad b1"></div>
+          <div class="pad snare-pad b2"></div>
+          <div class="pad snare-pad b3"></div>
+          <div class="pad snare-pad b4"></div>
+          <div class="pad snare-pad b5"></div>
+          <div class="pad snare-pad b6"></div>
+          <div class="pad snare-pad b7"></div>
+        </div>
+      </div>
+      <!-- Hihat sound -->
+      <div class="hihat-track">
+        <!-- Controls -->
+        <div class="controls">
+          <h1>HIHAT</h1>
+          <!-- Mute Sound -->
+          <button data-track="2" class="mute hihat-volume">
+            <i class="fa fa-volume-mute"></i>
+          </button>
+          <!-- Beat types -->
+          <select name="hihat-select" id="hihat-select">
+            <option value="./sounds/hihat-acoustic01.wav">Hihat Acoustic </option>
+            <option value="./sounds/hihat-808.wav">808 Hihat</option>
+            <option value="./sounds/hihat-electro.wav">Hihat Electro</option>
+            <option value="./sounds/tom-808.wav">808 Tom</option>
+            <option value="./sounds/perc-tambo.wav">Perc Tambo</option>
+            <option value="./sounds/openhat-slick.wav">Openhat Slick</option>
+            <option value="./sounds/hihat-reso.wav">Hihat Reso</option>
+            <option value="./sounds/hihat-ring.wav">Hihat Ring</option>
+            <option value="./sounds/clap-808.wav">808 Clap</option>
+            <option value="./sounds/ride-acoustic01.wav">Ride Acoustic</option>
+            <option value="./sounds/cowbell-808.wav">808 Cowbell</option>
+          </select>
+        </div>
+        <!-- Hihat beats -->
+        <div class="hihat">
+          <div class="pad hihat-pad b0"></div>
+          <div class="pad hihat-pad b1"></div>
+          <div class="pad hihat-pad b2"></div>
+          <div class="pad hihat-pad b3"></div>
+          <div class="pad hihat-pad b4"></div>
+          <div class="pad hihat-pad b5"></div>
+          <div class="pad hihat-pad b6"></div>
+          <div class="pad hihat-pad b7"></div>
+        </div>
+      </div>
+
+            <!-- Hihat sound -->
+            <div class="hihat-track">
+                <!-- Controls -->
+                <div class="controls">
+                  <h1>CLAP</h1>
+                  <!-- Mute Sound -->
+                  <button data-track="3" class="mute clap-volume">
+                    <i class="fa fa-volume-mute"></i>
+                  </button>
+                  <!-- Beat types -->
+                  <select name="clap-select" id="clap-select">
+                    <option value="./sounds/clap-808.wav">
+                      clap
+                    </option>
+                    <option value="./sounds/clap-808.wav">808 Hihat</option>
+                    <option value="./sounds/hihat-electro.wav">Hihat Electro</option>
+                    <option value="./sounds/tom-808.wav">808 Tom</option>
+                    <option value="./sounds/perc-tambo.wav">Perc Tambo</option>
+                    <option value="./sounds/openhat-slick.wav">Openhat Slick</option>
+                    <option value="./sounds/hihat-reso.wav">Hihat Reso</option>
+                    <option value="./sounds/hihat-ring.wav">Hihat Ring</option>
+                    <option value="./sounds/hihat-acoustic01.wav">808 Clap</option>
+                    <option value="./sounds/ride-acoustic01.wav">Ride Acoustic</option>
+                    <option value="./sounds/cowbell-808.wav">808 Cowbell</option>
+                  </select>
+                </div>
+                <!-- Hihat beats -->
+                <div class="hihat">
+                  <div class="pad clap-pad b0"></div>
+                  <div class="pad clap-pad b1"></div>
+                  <div class="pad clap-pad b2"></div>
+                  <div class="pad clap-pad b3"></div>
+                  <div class="pad clap-pad b4"></div>
+                  <div class="pad clap-pad b5"></div>
+                  <div class="pad clap-pad b6"></div>
+                  <div class="pad clap-pad b7"></div>
+                </div>
+              </div>
+      <button class="play">Play</button>
+      <div class="tempo">
+        <input
+          class="tempo-slider"
+          type="range"
+          max="300"
+          min="20"
+          value="150"
+        />
+        <p>Tempo: <span class="tempo-num">150</span></p>
+      </div>
+      
+    <div>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 20px;
+        }
+  
+        #song-upload {
+          margin-bottom: 10px;
+        }
+  
+        .controls-container {
+          display: flex;
+          align-items: center;
+        }
+  
+        .player-controls button {
+          margin-right: 10px;
+          padding: 8px 16px;
+          background-color: #4caf50;
+          color: #fff;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+  
+        .player-controls button:hover {
+          background-color: #45a049;
+        }
+        </style>
+  
+  <style>
+    .record-indicator {
+      display: none;
+    }
+  </style>
+  
+  <div>
+    <input type="file" id="song-upload" accept="audio/*">
+  </div>
+  <div class="controls-container">
+    <div class="player-controls">
+      <button id="play-button">Play</button>
+      <button id="stop-button">Stop</button>
+     
+      
+    </div>
+  </div>
+ 
+  <audio id="recorded-audio" style="display: none;"></audio>
+  
+  <script>
+    const songUploadInput = document.getElementById('song-upload');
+    const audioPlayer = document.createElement('audio');
+    const playButton = document.getElementById('play-button');
+    const stopButton = document.getElementById('stop-button');
+    const recordButton = document.getElementById('record-button');
+    const stopRecordButton = document.getElementById('stop-record-button');
+    const replayButton = document.getElementById('replay-button');
+    const recordIndicator = document.getElementById('record-indicator');
+    const recordedAudio = document.getElementById('recorded-audio');
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const audioRecorder = audioContext.createScriptProcessor(4096, 2, 2);
+    const recordedChunks = [];
+    let isRecording = false;
+    let isReplaying = false;
+  
+    playButton.addEventListener('click', function () {
+      audioPlayer.play();
+    });
+  
+    stopButton.addEventListener('click', function () {
+      audioPlayer.pause();
+      audioPlayer.currentTime = 0;
+    });
+  
+    songUploadInput.addEventListener('change', function (event) {
+      const file = event.target.files[0];
+      const fileURL = URL.createObjectURL(file);
+  
+      audioPlayer.src = fileURL;
+      audioPlayer.controls = true;
+  
+      document.body.appendChild(audioPlayer);
+    });
+  
+    // Connect the audio player to the audio recorder
+    audioPlayer.addEventListener('play', function () {
+      if (isRecording) {
+        audioPlayer.muted = true;
+        const source = audioContext.createMediaElementSource(audioPlayer);
+        source.connect(audioRecorder);
+        audioRecorder.connect(audioContext.destination);
+      }
+    });
+  
+    // Record audio data when the audio recorder receives input
+    audioRecorder.addEventListener('audioprocess', function (event) {
+      if (isRecording) {
+        const inputBuffer = event.inputBuffer;
+        for (let channel = 0; channel < inputBuffer.numberOfChannels; channel++) {
+          const inputData = inputBuffer.getChannelData(channel);
+          recordedChunks.push(new Float32Array(inputData));
+        }
+      }
+    });
+  
+    // Start recording when the record button is clicked
+    recordButton.addEventListener('click', function () {
+      if (!isRecording) {
+        recordedChunks.length = 0;
+        resetReplay();
+        recordIndicator.style.display = 'block';
+        isRecording = true;
+      }
+    });
+  
+    // Stop recording when the stop record button is clicked
+    stopRecordButton.addEventListener('click', function () {
+      if (isRecording) {
+        recordIndicator.style.display = 'none';
+        isRecording = false;
+      }
+    });
+  
+    // Replay the recorded audio when the replay button is clicked
+    replayButton.addEventListener('click', function () {
+      if (!isRecording && recordedChunks.length > 0) {
+        isReplaying = true;
+  
+        const recordedBuffer = audioContext
+        .createBuffer(2, recordedChunks.length * 4096, audioContext.sampleRate);
+      for (let channel = 0; channel < 2; channel++) {
+        const channelData = recordedBuffer.getChannelData(channel);
+        for (let i = 0; i < recordedChunks.length; i++) {
+          channelData.set(recordedChunks[i], i * 4096);
+        }
+      }
+
+      // Create a new AudioBufferSourceNode for each replay to prevent reusing the same instance
+      const recordedSource = audioContext.createBufferSource();
+      recordedSource.buffer = recordedBuffer;
+
+      // Disconnect any previous connections and connect the recorded source to the destination
+      recordedSource.disconnect();
+      recordedSource.connect(audioContext.destination);
+
+      recordedSource.start(0); // Start the recorded source at time 0
+      recordedSource.onended = resetReplay;
+
+      // Display the recorded audio for playback
+      recordedAudio.src = URL.createObjectURL(new Blob(recordedChunks));
+      recordedAudio.style.display = 'block';
+    }
+  });
+
+  // Reset replay state
+  function resetReplay() {
+    isReplaying = false;
+  }
+
+
+  
+</script>
+
+    </div>
+    <audio class="kick-sound" src="./sounds/kick-classic.wav"></audio>
+    <audio class="snare-sound" src="./sounds/snare-electro.wav"></audio>
+    <audio class="hihat-sound" src="./sounds/hihat-acoustic01.wav"></audio>
+    <audio class="clap-sound" src="./sounds/clap-808.wav"></audio>
+    <!-- &copy; Copyright by Andrew Tsegaye! Never use it to teach -->
+  </body>
+</html>
