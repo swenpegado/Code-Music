@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json.schemastore.org/wrangler.json",
+  "name": "code-music",
+  "compatibility_date": "2026-10-08",
+  "assets": {
+    "directory": "."
+  }
+}
